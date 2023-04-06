@@ -1,0 +1,18 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+    <h2>Categories</h2>
+    <br>
+    <div style="display: flex; gap: 1rem;">
+        {% for category in categories %}
+        <a href="{% url 'category_detail' category.id %}">
+            <div>
+                <img src="{{ category.img }}" alt="{{ category.name }}" style="width: 400px; height: 300px;">
+                <h3 class="text-center">{{ category.name }}</h3>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
